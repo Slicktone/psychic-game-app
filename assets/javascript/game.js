@@ -13,17 +13,50 @@
 // When the player loses, increase lose counter and restart
 
 // All Restarts should be done without refreshing the screen.
+
 var alphabet = ["a", "b","c", "d", "e","f","g","h","i","j",
 "k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 
-// Making the computer guess a letter
-var computerGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
+// Guesses so far
+var currentGuess = [];
+
+// Guesses Left
+var countDown = 9
 
 // Starting the wins/losses tally
 var wins = 0;
 var losses = 0;
 
-// Record the users keypress and log it
-document.onkeyup = function(event) {
-	var keyPress = String.fromCharCode(event.keyCode).toLowerCase();
+// Making the computer guess a letter
+var computerChoice = alphabet[Math.floor(Math.random() * alphabet.length)];
+
+function keyPress() {
+	document.onkeyup = function(event) {
+		var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+		userGuess.push(currentGuess);
+		document.write(currentGuess);
+	}
 }
+function guessCounter () {
+// If user guesses correctly
+if(userGuess === computerChoice) {
+	wins++;
+// If user guesses incorrectly
+	else if(userGuess !== computerChoice) {
+		countDown--;
+	}
+	// When the user runs out of guesses
+	else if(countDown === 0) {
+		alert("You Lose!");
+	}
+}
+	//If user loses statement after 9 tries
+// for(var i = 0; i < 9; i--) {
+// 		document.write(countDown);
+// 	}
+
+}
+//maybe try this for the guesses left
+// for(var i = 1; i < 26; i++) {
+// 	userGuess.push(currentGuess);
+// }

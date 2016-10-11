@@ -1,8 +1,6 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html>
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>My Psychic Game</title>
         <link rel="stylesheet" href="assets/css/style.css"> 
     </head>
@@ -10,8 +8,21 @@
         
         <h1> The Psychic Game </h1>
         <br>
-    <h3> Guess what letter i'm thinking of </h3>
+    <div id="physic-game">
+        <h3> Guess what letter i'm thinking of </h3>
+     
+     <script>
+     var html = "<h3>Wins: " + wins + "</h3>" + 
+            "<h3>losses: " + losses + "</h3>" + 
+            "<h3>Guesses Left: " + countDown + "</h3>" + 
+            "<h3>Your Guesses so Far: " + currentGuess + "</h3>";
 
-        <script src="assets/javascript/game.js"</script>
+        // Placing the html into the game ID
+        //document.querySelector('#game h2 div p').innerHTML = html;
+        document.getElementById("psychic-game").innerHTML = html;
+    </script>
+    <script src="assets/javascript/game.js"</script>
+    </div>
+      
     </body>
 </html>
