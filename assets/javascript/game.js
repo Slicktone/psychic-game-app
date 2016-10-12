@@ -21,7 +21,7 @@ var alphabet = ["a", "b","c", "d", "e","f","g","h","i","j",
 var currentGuess = [];
 
 // Guesses Left
-var countDown = 9
+var countDown = 9;
 
 // Starting the wins/losses tally
 var wins = 0;
@@ -30,32 +30,52 @@ var losses = 0;
 // Making the computer guess a letter
 var computerChoice = alphabet[Math.floor(Math.random() * alphabet.length)];
 
-function keyPress() {
 	document.onkeyup = function(event) {
 		var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
-		userGuess.push(currentGuess);
-		document.write(currentGuess);
+		currentGuess.push(userGuess);
+		document.getElementById("stuff").innerHTML = currentGuess;
 	}
-}
-function guessCounter () {
+
+
+function guessCounter() {
 // If user guesses correctly
 if(userGuess === computerChoice) {
 	wins++;
+}
 // If user guesses incorrectly
 	else if(userGuess !== computerChoice) {
 		countDown--;
 	}
 	// When the user runs out of guesses
 	else if(countDown === 0) {
+		losses++;
 		alert("You Lose!");
 	}
 }
-	//If user loses statement after 9 tries
+
+ // var html = "<p>Press r, p or s to start playing</p>" +
+ //        "<p>wins: " +
+ //        wins +
+ //        "</p>" +
+ //        "<p>losses: " +
+ //        losses +
+ //        "</p>" +
+ //        "<p>ties: " +
+ //        ties +
+ //        "</p>";
+
+ //        // Placing the html into the game ID
+ //        // document.querySelector('#game h2 div p').innerHTML = html;
+ //        document.getElementById('game').innerHTML = html;	
+
+        
+
+
+//If user loses statement after 9 tries
 // for(var i = 0; i < 9; i--) {
 // 		document.write(countDown);
 // 	}
 
-}
 //maybe try this for the guesses left
 // for(var i = 1; i < 26; i++) {
 // 	userGuess.push(currentGuess);
