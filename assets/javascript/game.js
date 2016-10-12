@@ -29,29 +29,30 @@ var losses = 0;
 
 // Making the computer guess a letter
 var computerChoice = alphabet[Math.floor(Math.random() * alphabet.length)];
+	console.log("computerGuess:", computerChoice);
 
 	document.onkeyup = function(event) {
 		var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
 		currentGuess.push(userGuess);
+		console.log("userGuess:", userGuess);
 		document.getElementById("stuff").innerHTML = currentGuess;
-	}
-
-
-function guessCounter() {
-// If user guesses correctly
-if(userGuess === computerChoice) {
-	wins++;
-}
+		// targetDiv.innerHTML = targetDiv.innerHTML + ". something."; appends the target div and text underneath it
+		if(userGuess === computerChoice) {
+			wins++;
+		}
 // If user guesses incorrectly
-	else if(userGuess !== computerChoice) {
-		countDown--;
+		else if(userGuess !== computerChoice) {
+			countDown--;
+		}
+		// When the user runs out of guesses
+		else if(countDown === 0) {
+			losses++;
+			alert("You Lose!");
+		}	
 	}
-	// When the user runs out of guesses
-	else if(countDown === 0) {
-		losses++;
-		alert("You Lose!");
-	}
-}
+
+
+ 
 
  // var html = "<p>Press r, p or s to start playing</p>" +
  //        "<p>wins: " +
