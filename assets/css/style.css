@@ -1,0 +1,35 @@
+body {
+	text-align: center;
+	padding-left: 20%;
+	padding-right: 20%;
+	margin: 0 auto;
+	background-color: #345681;
+}
+
+h1, h2, h3 {
+	font-family: 'Arial', Times, Times New Roman, serif;
+	font-weight: 600;
+	line-height: 49px;
+	color: #ccc;
+}
+h1 {
+	font-size: 40px;
+}
+h2 {
+	font-size: 30px;
+}
+h3 {
+	font-size: 20px;
+}
+.banner {
+	margin-top: 3%;
+}
+.banner h1 {
+	color: #000;
+}
+.bocks {
+	border: 3px dashed #ccc;
+	margin-top: 10%;
+	background-color: #000033;
+
+}

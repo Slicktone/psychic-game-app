@@ -2,17 +2,24 @@
 <html>
     <head>
         <title>My Psychic Game</title>
+        <link rel="stylesheet" href="assets/css/reset.css">
         <link rel="stylesheet" href="assets/css/style.css"> 
     </head>
     <body>
 
-    
-    <h1> Press any key to take a guess!</h1>
-        <h3>Wins: <span id="winCounter"></span></h3>
-        <h3>Losses: <span id="loseCounter"></span></h3>
-        <h3>Guesses Left: <span id="countDown"></span></h3>
-        <h3>Guesses so Far: <span id="currentGuess"></span></h3>
+<div class="banner">
+    <h1> The Psychic Game </h1>
+</div>
 
+    <div class="bocks">
+        <h1> Press any key to take a guess!</h1>
+        <h3>Wins: <span id="winCounter" class="win"></span></h3>
+        <h3>Losses: <span id="loseCounter" class="loss"></span></h3>
+        <h3>Guesses Left: <span id="countDown" class="countdown"></span></h3>
+        <h3>Guesses so Far: <span id="currentGuess" class="guesses"></span></h3>
+    </div>
+
+<div class="image"></div>
 
 
     <script src="assets/javascript/game.js"></script>
