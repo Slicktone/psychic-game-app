@@ -27,6 +27,11 @@ var countDown = 9;
 var wins = 0;
 var losses = 0;
 
+function resetCounter() {
+	currentGuess = [];
+	countDown = 9;
+}
+
 // Making the computer guess a letter
 var computerChoice = alphabet[Math.floor(Math.random() * alphabet.length)];
 	console.log("computerGuess:", computerChoice);
@@ -34,40 +39,36 @@ var computerChoice = alphabet[Math.floor(Math.random() * alphabet.length)];
 	document.onkeyup = function(event) {
 		var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
 		currentGuess.push(userGuess);
+		document.getElementById("winCounter").innerHTML = wins;
+		document.getElementById("loseCounter").innerHTML = losses;
+		document.getElementById("countDown").innerHTML = countDown;
+		document.getElementById("currentGuess").innerHTML = currentGuess;
 		console.log("userGuess:", userGuess);
-		document.getElementById("stuff").innerHTML = currentGuess;
-		// targetDiv.innerHTML = targetDiv.innerHTML + ". something."; appends the target div and text underneath it
+		
 		if(userGuess === computerChoice) {
 			wins++;
+			
 		}
 // If user guesses incorrectly
 		else if(userGuess !== computerChoice) {
 			countDown--;
 		}
-		// When the user runs out of guesses
-		else if(countDown === 0) {
-			losses++;
-			alert("You Lose!");
-		}	
-	}
 
+		// When the user runs out of guesses
+			if(countDown === 0) {
+			losses++;
+			resetCounter();
+			}	
+		}
+
+
+
+	// var content = document.createElement("div");
+	// content.innerHTML = "Yo";
+	// userGuess.appendChild(content);
+	// content.innerHTML = "<h3>Wins: " +  wins  + "</h3>";
 
  
-
- // var html = "<p>Press r, p or s to start playing</p>" +
- //        "<p>wins: " +
- //        wins +
- //        "</p>" +
- //        "<p>losses: " +
- //        losses +
- //        "</p>" +
- //        "<p>ties: " +
- //        ties +
- //        "</p>";
-
- //        // Placing the html into the game ID
- //        // document.querySelector('#game h2 div p').innerHTML = html;
- //        document.getElementById('game').innerHTML = html;	
 
         
 
