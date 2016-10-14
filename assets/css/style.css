@@ -31,5 +31,10 @@ h3 {
 	border: 3px dashed #ccc;
 	margin-top: 10%;
 	background-color: #000033;
+}
 
+@media (max-width: 640px) {
+	.bocks {
+		padding: 50px;
+	}
 }
